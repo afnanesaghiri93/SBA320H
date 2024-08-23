@@ -44,7 +44,7 @@ const handleKeydown = (e) => {
                 </div>
                 <div className="weather">
                     <img src={sunny} alt="sunny" />
-                    <div className="weather-type">Clear</div>
+                    <div className="weather-type">{data.weather ? data.weather[0].main : null}</div>
                     <div className="temp">{data.main ? `${Math.floor(data.main.temp)}°` : null}</div>
 
                 </div>
@@ -56,12 +56,12 @@ const handleKeydown = (e) => {
                     <div className="humidity">
                         <div className="data-name">Humidity</div>
                         <i className="fa-solid fa-droplet"></i>
-                        <div className="data">35%</div>
+                        <div className="data">{data.main ? data.main.humidity : null}%</div>
                     </div>
                     <div className="wind">
                         <div className="data-name">Wind</div>
                         <i className="fa-solid fa-wind"></i>
-                        <div className="data">3 km/h</div></div>
+                        <div className="data">{data.wind ? data.wind.speed : null} km/h</div></div>
                 </div>
             </div>
         </div>
